@@ -3,9 +3,9 @@
 echo 'OK Pleased to meet you'
 
 while read stdin; do
-	case `echo $stdin | tr '[:lower:]' '[:upper:]'` in
-		BYE) break ;;
-		GETPIN) echo "D `DISPLAY=:0 dmenu -P -p passphrase $*`\nOK" ;;
+	case $stdin in
+		*BYE*) break ;;
+		*GETPIN*) echo "D `DISPLAY=:0 dmenu -P -p gpg-agent`\nOK" ;;
 		*) echo OK
 	esac
 done

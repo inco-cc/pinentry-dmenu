@@ -12,7 +12,7 @@ To install this, do a `git clone https://github.com/drincoxyz/pinentry-dmenu`, c
 
 There's also an [AUR](https://aur.archlinux.org/) package available, which is recommended for Arch users. To install it, do a `git clone https://aur.archlinux.org/pinentry-dmenu-inco.git` and run `makepkg -si`, or use an AUR wrapper like [yay](https://aur.archlinux.org/packages/yay/) and simply run `yay -S pinentry-dmenu-inco` as a non-root user.
 
-Note that the [pinentry-dmenu](https://aur.archlinux.org/packages/pinentry-dmenu) AUR package is **not** related to this project. That's another alternative that does more or less the same thing, but it builds its own dmenu binary with the [password]() patch applied automatically. This project is much simpler, as it uses the first dmenu binary it finds on the system.
+Note that the [pinentry-dmenu](https://aur.archlinux.org/packages/pinentry-dmenu) AUR package is **not** related to this project. That's another alternative that does more or less the same thing, but it builds its own dmenu binary with the [password](https://tools.suckless.org/dmenu/patches/password/) patch applied automatically. This project is much simpler, as it uses the first dmenu binary it finds on the system.
 
 # Usage
 
@@ -25,11 +25,3 @@ pinentry-program /usr/bin/pinentry-dmenu
 ```
 
 The full path will depend on the `PREFIX` used in `config.mk`. The above example would apply to users who installed the AUR package, but by installing it with `make` with the default `PREFIX` installs it to `/usr/local/bin/pinentry-dmenu`.
-
-pinentry-dmenu also passes any additional arguments to dmenu, which effectively allows you to configure it however you want:
-
-```
-pinentry-program /usr/bin/pinentry-dmenu -b
-```
-
-The above would make the pinentry prompt show on the bottom, for example.
